@@ -1,0 +1,24 @@
+{
+  "name": "blueedtech_m02_projetosala",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Laurentius96/BlueEdTech_M02_ProjetoSala.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Laurentius96/BlueEdTech_M02_ProjetoSala/issues"
+  },
+  "homepage": "https://github.com/Laurentius96/BlueEdTech_M02_ProjetoSala#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "prompt-sync": "^4.2.0"
+  }
+}
