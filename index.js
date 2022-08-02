@@ -32,20 +32,16 @@ const paletas = [
     },
 ];
 
+app.get('/', function (req, res) {
+    res.send('Hello World');
+});
+
 app.get('/paletas/find-paletas', (req, res) => {
     res.send(paletas);
 });
 
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
-});
-
-app.get('/', function (req, res) {
-    res.send('Hello World');
-});
-
-app.get('/teste', function (req, res) {
-    res.send('Essa é uma página teste');
 });
 
 app.listen(port, () => {
