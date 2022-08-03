@@ -41,6 +41,12 @@ app.get('/paletas/find-paletas', (req, res) => {
     res.send(paletas);
 });
 
+app.get('/paletas/find-paleta/:id', (req, res) => {
+    const idParam = req.params.id;
+    const chosenPaleta = paletas.find(paleta => paleta.id == idParam);
+    res.send(chosenPaleta);
+});
+
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
 });
