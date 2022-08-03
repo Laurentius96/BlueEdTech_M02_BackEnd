@@ -4,6 +4,7 @@ const app = express();
 
 // Vamos inserir uma linha de código para que a aplicação reconheça o formato JSON nas requisições:
 app.use(express.json());
+//
 
 const paletas = [
     {
@@ -20,7 +21,7 @@ const paletas = [
         descricao:
             'Quam vulputate dignissim suspendisse in est ante in nibh mauris.',
         foto: 'assets/images/banana-com-nutella.png',
-        preco: 20.0,
+        preco: 10.0,
     },
     {
         id: 3,
@@ -38,10 +39,6 @@ app.get('/', function (req, res) {
 
 app.get('/paletas/find-paletas', (req, res) => {
     res.send(paletas);
-});
-
-app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}`);
 });
 
 app.listen(port, () => {
