@@ -13,6 +13,18 @@ const findPaletaByIdController = (req, res) => {
 
 const createPaletaController = (req, res) => {
     const paleta = req.body;
+    if (
+        !paleta ||
+        !paleta.sabor ||
+        !paleta.descricao ||
+        !paleta.foto ||
+        !paleta.preco
+    ) {
+        res.status(400).send({
+            mensagem:
+                'Você naõ preencheu todos os dados para adicionar uma nova paleta ao cardápio!',
+        });
+    }
     const newPaleta = paletasService.createPaletaService(paleta);
     res.send(newPaleta);
 };
