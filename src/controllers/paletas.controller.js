@@ -67,9 +67,11 @@ const updatePaletaController = (req, res) => {
 
 const deletePaletaController = (req, res) => {
     const idParam = req.params.id;
+    // podemos incurtar o para (!req.params.id)
     if (!idParam) {
         return res.status(404).send({ message: 'Paleta não encontrada!' });
     }
+
     paletasService.deletePaletaService(idParam);
     res.send({ message: 'Paleta deletada com sucesso!' });
 };
