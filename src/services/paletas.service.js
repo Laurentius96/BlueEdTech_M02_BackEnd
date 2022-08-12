@@ -1,3 +1,4 @@
+const Paleta = require('../models/Paleta');
 const Paletas = require('../models/Paleta');
 
 const findPaletasService = async () => {
@@ -10,11 +11,9 @@ const findPaletaByIdService = async parametroId => {
     return paleta;
 };
 
-const createPaletaService = newPaleta => {
-    const newId = paletas.length + 1;
-    newPaleta.id = newId;
-    paletas.push(newPaleta);
-    return newPaleta;
+const createPaletaService = async newPaleta => {
+    const paletaCriada = await Paleta.create(newPaleta);
+    return paletaCriada;
 };
 
 const updatePaletaService = (id, paletaEdited) => {

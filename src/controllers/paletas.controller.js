@@ -21,8 +21,9 @@ const findPaletaByIdController = async (req, res) => {
     res.send(chosenPaleta);
 };
 
-const createPaletaController = (req, res) => {
+const createPaletaController = async (req, res) => {
     const paleta = req.body;
+
     if (
         !paleta ||
         !paleta.sabor ||
@@ -30,12 +31,14 @@ const createPaletaController = (req, res) => {
         !paleta.foto ||
         !paleta.preco
     ) {
-        res.status(400).send({
-            mensagem:
-                'Você naõ preencheu todos os dados para adicionar uma nova paleta ao cardápio!',
+        return res.status(400).send({
+            message:
+                'Você não preencheu todos os dados para adicionar uma nova paleta ao cardápio!',
         });
     }
-    const newPaleta = paletasService.createPaletaService(paleta);
+
+    const newPaleta = await paletasService.createPaletaService(paleta);
+
     res.send(newPaleta);
 };
 
