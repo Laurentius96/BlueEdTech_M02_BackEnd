@@ -5,8 +5,9 @@ const findPaletasService = async () => {
     return paletas;
 };
 
-const findPaletaByIdService = id => {
-    return paletas.find(paleta => paleta.id == id);
+const findPaletaByIdService = async parametroId => {
+    const paleta = await Paletas.findById(parametroId);
+    return paleta;
 };
 
 const createPaletaService = newPaleta => {
